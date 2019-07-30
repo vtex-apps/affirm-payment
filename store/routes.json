@@ -1,0 +1,8 @@
+{
+    "store.affirm": {
+      "path": "/affirm-payment"
+    },
+    "store.affirm-confirm": {
+      "path": "/affirm-confirm"
+    }
+}

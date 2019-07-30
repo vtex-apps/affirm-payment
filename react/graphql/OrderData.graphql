@@ -1,0 +1,41 @@
+query OrderData($qs: String) {
+    orderData(qs: $qs) {
+        transactionId
+        miniCart {
+            buyer {
+                firstName
+                lastName
+                email
+                phone
+            }
+            billingAddress {
+                number
+                street
+                complement
+                city
+                state
+                postalCode
+                country
+            }
+            shippingAddress {
+                number
+                street
+                complement
+                city
+                state
+                postalCode
+                country
+            }
+            items {
+                id 
+                name 
+                price
+                quantity
+            }
+            shippingValue
+            taxValue
+        }
+        value
+        returnUrl
+    }
+}

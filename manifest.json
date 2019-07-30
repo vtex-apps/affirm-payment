@@ -1,0 +1,68 @@
+{
+  "name": "affirm-payment",
+  "vendor": "vtex",
+  "version": "0.0.1",
+  "title": "Affirm Payment",
+  "description": "An implentation of Affirm payment method",
+  "categories": [],
+  "registries": [
+    "smartcheckout"
+  ],
+  "builders": {
+    "react": "3.x",
+    "store": "0.x",
+    "node": "4.x",
+    "graphql": "1.x"
+  },
+  "mustUpdateAt": "2018-09-05",
+  "scripts": {
+    "postreleasy": "vtex publish --verbose"
+  },
+  "dependencies": {
+    "vtex.store": "2.x",
+    "vtex.styleguide": "9.x",
+    "vtex.affirm-api": "0.x"
+  },
+  "settingsSchema": {
+    "title": "Affirm Integration",
+    "type": "object",
+    "properties": {
+      "isLive": {
+        "title": "Production Mode",
+        "description": "Set to true for production mode, false for sandbox mode",
+        "type": "boolean",
+        "default": false
+      },
+      "companyName": {
+        "title": "Company Name (optional)",
+        "description": "If you have multiple sites operating under a single Affirm account, you can override the external company/brand name that the customer sees. This affects all references to your company name in the Affirm UI. Leave blank to use your default company name stored in your Affirm account.",
+        "type": "string",
+        "default": ""
+      }
+    }
+  },
+  "policies": [
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "{{account}}.vtexcommercestable.com.br",
+        "path": "/*"
+      }
+    },
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "{{account}}.vtexpayments.com.br",
+        "path": "/api/dataentities/*"
+      }
+    },
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "{{workspace}}--{{account}}.{{process.env.VTEX_PUBLIC_ENDPOINT}}",
+        "path": "/affirm/*"
+      }
+    }
+  ],
+  "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
+}

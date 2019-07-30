@@ -1,0 +1,18 @@
+{
+    "store.affirm": {
+        "required": [
+            "affirm-modal"
+        ]
+    },
+    "store.affirm-confirm": {
+        "required": [
+            "affirm-confirm"
+        ]
+    },
+    "affirm-modal": {
+        "component": "AffirmModal"
+    },
+    "affirm-confirm": {
+        "component": "AffirmConfirm"
+    }
+}

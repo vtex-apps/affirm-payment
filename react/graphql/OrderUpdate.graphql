@@ -1,0 +1,5 @@
+mutation OrderUpdate($url: String, $token: String, $callbackUrl: String, $orderTotal: Int ) {
+    orderUpdate(inboundUrl: $url, token: $token, callbackUrl: $callbackUrl, orderTotal: $orderTotal) {
+        status
+    }
+}

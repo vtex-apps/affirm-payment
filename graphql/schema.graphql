@@ -1,0 +1,112 @@
+# queries
+type AffirmSettings {
+    isLive: Boolean
+    companyName: String
+}
+
+type PaymentRequest {
+    reference: String
+    transactionId: String
+    paymentId: String
+    paymentMethod: String
+    merchantName: String
+    value: Float
+    currency: String
+    installments: Int
+    deviceFingerprint: String
+    card: Card
+    miniCart: MiniCart
+    url: String
+    callbackUrl: String
+    returnUrl: String
+    inboundRequestsUrl: String
+}
+
+type Expiration {
+    month: String
+    year: String
+}
+
+type Card {
+    holder: String
+    number: String
+    csc: String
+    expiration: Expiration
+}
+
+type Buyer {
+    id: String
+    firstName: String
+    lastName: String
+    document: String
+    documentType: String
+    email: String
+    phone: String
+}
+
+type ShippingAddress {
+    country: String
+    street: String
+    number: String
+    complement: String
+    neighborhood: String
+    postalCode: String
+    city: String
+    state: String
+}
+
+type BillingAddress {
+    country: String
+    street: String
+    number: String
+    complement: String
+    neighborhood: String
+    postalCode: String
+    city: String
+    state: String
+}
+
+type Item {
+    id: String
+    name: String
+    price: Float 
+    quantity: Int
+    discount: Float
+}
+
+type MiniCart {
+    shippingValue: Float
+    taxValue: Float
+    buyer: Buyer
+    shippingAddress: ShippingAddress
+    billingAddress: BillingAddress
+    items: [Item]
+}
+
+type PaymentResponse {
+    paymentId: String
+    status: String
+    tid: String
+    authorizationId: String
+    nsu: String
+    acquirer: String
+    paymentUrl: String
+    identificationNumber: String
+    identificationNumberFormatted: String
+    barCodeImageType: String
+    barCodeImageNumber: String
+    code: String
+    message: String
+    delayToAutoSettle: Int
+    delayToAutoSettleAfterAntiFraud: Int
+    delayToCancel: Int
+}
+
+type Query {
+    affirmSettings: AffirmSettings @cacheControl(scope: PUBLIC, maxAge: MEDIUM)
+    orderData(qs: String): PaymentRequest
+}
+
+type Mutation {
+    orderUpdate(inboundUrl: String, token: String, callbackUrl: String, orderTotal: Int): PaymentResponse
+}
