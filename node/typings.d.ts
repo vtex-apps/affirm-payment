@@ -22,4 +22,6 @@ declare module 'colossus' {
 
 interface AffirmSettings {
     isLive: boolean
+    companyName: string
+    publicApiKey: string
 }

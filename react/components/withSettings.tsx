@@ -24,5 +24,5 @@ export default function withSettings(Component: any): any {
         }
     }
 
-    return graphql(Settings)(WithSettings)
+    return graphql(Settings, { options: { ssr: false }})(WithSettings)
 }

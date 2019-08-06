@@ -2,6 +2,7 @@
 type AffirmSettings {
     isLive: Boolean
     companyName: String
+    publicApiKey: String
 }
 
 type PaymentRequest {

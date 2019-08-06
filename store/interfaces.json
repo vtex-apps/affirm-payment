@@ -14,5 +14,8 @@
     },
     "affirm-confirm": {
         "component": "AffirmConfirm"
+    },
+    "product-teaser.product.affirm": {
+        "component": "AffirmPromo"
     }
 }

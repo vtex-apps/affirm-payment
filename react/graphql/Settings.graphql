@@ -2,5 +2,6 @@ query Settings {
     affirmSettings {
         isLive
         companyName
+        publicApiKey
     }
 }

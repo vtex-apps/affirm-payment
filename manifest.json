@@ -1,7 +1,7 @@
 {
   "name": "affirm-payment",
   "vendor": "vtex",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "title": "Affirm Payment",
   "description": "An implentation of Affirm payment method",
   "categories": [],
@@ -21,6 +21,8 @@
   "dependencies": {
     "vtex.store": "2.x",
     "vtex.styleguide": "9.x",
+    "vtex.product-teaser-interfaces": "1.x",
+    "vtex.product-context": "0.x",
     "vtex.affirm-api": "0.x"
   },
   "settingsSchema": {
@@ -38,6 +40,40 @@
         "description": "If you have multiple sites operating under a single Affirm account, you can override the external company/brand name that the customer sees. This affects all references to your company name in the Affirm UI. Leave blank to use your default company name stored in your Affirm account.",
         "type": "string",
         "default": ""
+      },
+      "publicApiKey": {
+        "title": "Public API Key",
+        "description": "The public API key for your Affirm account",
+        "type": "string",
+        "default": ""
+      },
+      "delayInterval": {
+        "title": "Interval to use for the following three settings",
+        "type": "string",
+        "enum": [
+          "Minutes",
+          "Hours",
+          "Days"
+        ],
+        "default": "Days"
+      },
+      "delayToAutoSettle": {
+        "title": "Delay to auto-settle",
+        "description": "Number of minutes/hours/days before authorized Affirm payments are automatically settled",
+        "type": "number",
+        "default": 30
+      },
+      "delayToAutoSettleAfterAntifraud": {
+        "title": "Delay to auto-settle after anti-fraud",
+        "description": "Number of minutes/hours/days before authorized Affirm payments are automatically settled after merchant's antifraud approval",
+        "type": "number",
+        "default": 30
+      },
+      "delayToCancel": {
+        "title": "Delay to cancel",
+        "description": "Number of minutes/hours/days before Affirm payments are automatically canceled",
+        "type": "number",
+        "default": 30
       }
     }
   },

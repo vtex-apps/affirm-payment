@@ -5,7 +5,6 @@ import scriptLoader from 'react-async-script-loader'
 import queryString from 'query-string'
 import { Spinner } from 'vtex.styleguide'
 import orderData from './../graphql/OrderData.graphql'
-import withSettings from './withSettings'
 
 type AffirmProps = {
     client: WithApolloClient<any>
@@ -52,6 +51,7 @@ class AffirmModal extends Component<AffirmProps> {
     }
 
     componentDidMount() {
+        window.modalTriggered = false
         const qs = queryString.parse(location.search)
         if (typeof qs.k === "string") {
             this.setState({ api_key: qs.k, hasApiKey: true })
@@ -67,66 +67,67 @@ class AffirmModal extends Component<AffirmProps> {
         const qs = queryString.parse(location.search)
         const { isScriptLoaded, isScriptLoadSucceed, settings: { companyName } } = this.props
         
-        if (this.state.hasOrderData && isScriptLoaded && isScriptLoadSucceed) {
-        window._affirm_config = {
-            public_api_key:  this.state.api_key
-        }
-        const items = this.state.items.map((item: any) => ({ 
-            "display_name": item.display_name, 
-            "sku": item.sku, 
-            "unit_price": item.unit_price * 100,
-            "qty": item.qty 
-        }))
-        window.affirm.checkout({
-            "merchant": {
-                "name": companyName != null && companyName != "" ? companyName : undefined,
-                "user_confirmation_url": "https://" + window.location.hostname + "/affirm-confirm?g=" + qs.g ,
-                "user_cancel_url": this.state.returnUrl,
-                "user_confirmation_url_action": "GET"
-            },
-            "shipping": {
-                "name": {
-                    "first": this.state.custFirstName,
-                    "last": this.state.custLastName
+        if (this.state.hasOrderData && isScriptLoaded && isScriptLoadSucceed && !window.modalTriggered) {
+            window.modalTriggered = true
+            window._affirm_config = {
+                public_api_key:  this.state.api_key
+            }
+            const items = this.state.items.map((item: any) => ({ 
+                "display_name": item.display_name, 
+                "sku": item.sku, 
+                "unit_price": item.unit_price * 100,
+                "qty": item.qty 
+            }))
+            window.affirm.checkout({
+                "merchant": {
+                    "name": companyName != null && companyName != "" ? companyName : undefined,
+                    "user_confirmation_url": "https://" + window.location.hostname + "/affirm-confirm?g=" + qs.g ,
+                    "user_cancel_url": this.state.returnUrl,
+                    "user_confirmation_url_action": "GET"
                 },
-                "address": {
-                    "line1": this.state.shippingLine1,
-                    "line2": this.state.shippingLine2,
-                    "city": this.state.shippingCity,
-                    "state": this.state.shippingState,
-                    "zipcode": this.state.shippingZip,
-                    "country": this.state.shippingCountry
+                "shipping": {
+                    "name": {
+                        "first": this.state.custFirstName,
+                        "last": this.state.custLastName
+                    },
+                    "address": {
+                        "line1": this.state.shippingLine1,
+                        "line2": this.state.shippingLine2,
+                        "city": this.state.shippingCity,
+                        "state": this.state.shippingState,
+                        "zipcode": this.state.shippingZip,
+                        "country": this.state.shippingCountry
+                    },
+                    "phone_number": this.state.phoneNumber,
+                    "email": this.state.emailAddress
                 },
-                "phone_number": this.state.phoneNumber,
-                "email": this.state.emailAddress
-            },
-            "billing": {
-                "name": {
-                    "first": this.state.custFirstName,
-                    "last": this.state.custLastName
+                "billing": {
+                    "name": {
+                        "first": this.state.custFirstName,
+                        "last": this.state.custLastName
+                    },
+                    "address": {
+                        "line1": this.state.billingLine1,
+                        "line2": this.state.billingLine2,
+                        "city": this.state.billingCity,
+                        "state": this.state.billingState,
+                        "zipcode": this.state.billingZip,
+                        "country": this.state.billingCountry
+                    },
+                    "phone_number": this.state.phoneNumber,
+                    "email": this.state.emailAddress
                 },
-                "address": {
-                    "line1": this.state.billingLine1,
-                    "line2": this.state.billingLine2,
-                    "city": this.state.billingCity,
-                    "state": this.state.billingState,
-                    "zipcode": this.state.billingZip,
-                    "country": this.state.billingCountry
+                "items": items,
+                "metadata": {
+                    "shipping_type": "",
+                    "mode": "modal"
                 },
-                "phone_number": this.state.phoneNumber,
-                "email": this.state.emailAddress
-            },
-            "items": items,
-            "metadata": {
-                "shipping_type": "",
-                "mode": "modal"
-            },
-            "order_id": this.state.transactionId,
-            "shipping_amount": this.state.shippingValue * 100,
-            "tax_amount": this.state.taxValue * 100,
-            "total": this.state.orderTotal * 100
-        });
-        window.affirm.checkout.open();
+                "order_id": this.state.transactionId,
+                "shipping_amount": this.state.shippingValue * 100,
+                "tax_amount": this.state.taxValue * 100,
+                "total": this.state.orderTotal * 100
+            });
+            window.affirm.checkout.open();
         }
     }
 
@@ -202,7 +203,6 @@ class AffirmModal extends Component<AffirmProps> {
 }
 
 export default compose(
-    withSettings,
     withApollo,
     scriptLoader(
         'https://cdn1-sandbox.affirm.com/js/v2/affirm.js'
