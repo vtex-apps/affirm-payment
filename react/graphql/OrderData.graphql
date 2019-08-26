@@ -1,6 +1,7 @@
 query OrderData($qs: String) {
     orderData(qs: $qs) {
         transactionId
+        orderId
         miniCart {
             buyer {
                 firstName

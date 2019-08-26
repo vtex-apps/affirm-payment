@@ -1,5 +1,5 @@
-mutation OrderUpdate($url: String, $token: String, $callbackUrl: String, $orderTotal: Int ) {
-    orderUpdate(inboundUrl: $url, token: $token, callbackUrl: $callbackUrl, orderTotal: $orderTotal) {
+mutation OrderUpdate($url: String, $orderId: String, $token: String, $callbackUrl: String, $orderTotal: Int ) {
+    orderUpdate(inboundUrl: $url, orderId: $orderId, token: $token, callbackUrl: $callbackUrl, orderTotal: $orderTotal) {
         status
     }
 }

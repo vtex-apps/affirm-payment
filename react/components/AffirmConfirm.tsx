@@ -31,7 +31,8 @@ class AffirmConfirm extends Component<AffirmProps> {
             const returnUrl = result.data.orderData.returnUrl
             this.props.orderUpdateMutation({
                 variables: {
-                    url: result.data.orderData.callbackUrl.replace("https","http").replace("notification","inbound-request/auth"),
+                    url: result.data.orderData.inboundRequestsUrl.replace("https","http").replace(":action", "auth"),
+                    orderId: result.data.orderData.orderId,
                     token: token,
                     callbackUrl: result.data.orderData.callbackUrl,
                     orderTotal: result.data.orderData.value * 100

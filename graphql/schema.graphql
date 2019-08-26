@@ -9,6 +9,7 @@ type PaymentRequest {
     reference: String
     transactionId: String
     paymentId: String
+    orderId: String
     paymentMethod: String
     merchantName: String
     value: Float
@@ -109,5 +110,5 @@ type Query {
 }
 
 type Mutation {
-    orderUpdate(inboundUrl: String, token: String, callbackUrl: String, orderTotal: Int): PaymentResponse
+    orderUpdate(inboundUrl: String, orderId: String, token: String, callbackUrl: String, orderTotal: Int): PaymentResponse
 }

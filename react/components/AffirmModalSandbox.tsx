@@ -82,7 +82,7 @@ class AffirmModal extends Component<AffirmProps> {
                 "merchant": {
                     "name": companyName != null && companyName != "" ? companyName : undefined,
                     "user_confirmation_url": "https://" + window.location.hostname + "/affirm-confirm?g=" + qs.g ,
-                    "user_cancel_url": this.state.returnUrl,
+                    "user_cancel_url": this.state.returnUrl + "&status=denied",
                     "user_confirmation_url_action": "GET"
                 },
                 "shipping": {
@@ -128,6 +128,10 @@ class AffirmModal extends Component<AffirmProps> {
                 "total": this.state.orderTotal * 100
             });
             window.affirm.checkout.open();
+            var self = this;
+            window.affirm.ui.error.on("close", function(){
+                window.location.replace(self.state.returnUrl + "&status=denied")
+            });
         }
     }
 
@@ -151,7 +155,7 @@ class AffirmModal extends Component<AffirmProps> {
             ))
 
             this.setState({
-                transactionId: result.data.orderData.transactionId,
+                transactionId: result.data.orderData.orderId,
                 custFirstName: result.data.orderData.miniCart.buyer.firstName,
                 custLastName: result.data.orderData.miniCart.buyer.lastName,
                 phoneNumber: result.data.orderData.miniCart.buyer.phone,

@@ -14,11 +14,11 @@ export const queries = {
 }
 
 export const mutations = {
-    orderUpdate: async (_: any, { inboundUrl, token, callbackUrl, orderTotal }: { inboundUrl: string, token: string, callbackUrl: string, orderTotal: number }, ctx: Context) => {
+    orderUpdate: async (_: any, { inboundUrl, orderId, token, callbackUrl, orderTotal }: { inboundUrl: string, orderId: string, token: string, callbackUrl: string, orderTotal: number }, ctx: Context) => {
         const {
             clients: { paymentsProxy },
         } = ctx
 
-        return paymentsProxy.updatePaymentRequest(inboundUrl, token, callbackUrl, orderTotal )
+        return paymentsProxy.updatePaymentRequest(inboundUrl, orderId, token, callbackUrl, orderTotal )
     }
 }

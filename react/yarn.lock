@@ -1491,25 +1491,29 @@ uri-js@^4.2.2:
   dependencies:
     punycode "^2.1.0"
 
-"vtex.affirm-api@https://sandbox--motorolaus.myvtex.com/_v/private/typings/linked/v1/vtex.affirm-api@0.0.1+build1564407662/public/_types/react":
+"vtex.affirm-api@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.affirm-api@0.1.0/public/_types/react":
   version "0.0.0"
-  resolved "https://sandbox--motorolaus.myvtex.com/_v/private/typings/linked/v1/vtex.affirm-api@0.0.1+build1564407662/public/_types/react#fa7a0347e046eab3dd768998fc9252b2c0dd5aef"
+  resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.affirm-api@0.1.0/public/_types/react#fa7a0347e046eab3dd768998fc9252b2c0dd5aef"
 
 "vtex.product-context@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.product-context@0.0.6/public/_types/react":
   version "0.0.0"
   resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.product-context@0.0.6/public/_types/react#fa7a0347e046eab3dd768998fc9252b2c0dd5aef"
 
-"vtex.render-runtime@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.render-runtime@8.44.0/public/_types/react":
-  version "8.44.0"
-  resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.render-runtime@8.44.0/public/_types/react#ee8ef5b54aef16430467e9959476fb4c9dd1ae1e"
+"vtex.product-teaser-interfaces@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.product-teaser-interfaces@1.0.1/public/_types/react":
+  version "1.0.1"
+  resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.product-teaser-interfaces@1.0.1/public/_types/react#b7d4ae9c8f7c13aa8e706619e7054f018d0be1f4"
 
-"vtex.store@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.store@2.47.2/public/_types/react":
-  version "0.0.0"
-  resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.store@2.47.2/public/_types/react#fa7a0347e046eab3dd768998fc9252b2c0dd5aef"
+"vtex.render-runtime@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.render-runtime@8.48.2/public/_types/react":
+  version "8.48.2"
+  resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.render-runtime@8.48.2/public/_types/react#33b129a761a4e1da9096ceb9f5ba99589d3eb0ef"
 
-"vtex.styleguide@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.styleguide@9.70.1/public/_types/react":
+"vtex.store@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.store@2.49.0/public/_types/react":
   version "0.0.0"
-  resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.styleguide@9.70.1/public/_types/react#fa7a0347e046eab3dd768998fc9252b2c0dd5aef"
+  resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.store@2.49.0/public/_types/react#fa7a0347e046eab3dd768998fc9252b2c0dd5aef"
+
+"vtex.styleguide@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.styleguide@9.73.0/public/_types/react":
+  version "0.0.0"
+  resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.styleguide@9.73.0/public/_types/react#fa7a0347e046eab3dd768998fc9252b2c0dd5aef"
 
 which@^1.2.9:
   version "1.3.1"
