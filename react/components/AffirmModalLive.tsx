@@ -16,6 +16,7 @@ type AffirmProps = {
 type AffirmSettings = {
     isLive: boolean
     companyName: string
+    siteHostSuffix: string
 }
 
 class AffirmModal extends Component<AffirmProps> {
@@ -65,7 +66,7 @@ class AffirmModal extends Component<AffirmProps> {
 
     componentDidUpdate() {
         const qs = queryString.parse(location.search)
-        const { isScriptLoaded, isScriptLoadSucceed, settings: { companyName } } = this.props
+        const { isScriptLoaded, isScriptLoadSucceed, settings: { companyName }, settings: {siteHostSuffix} } = this.props
         
         if (this.state.hasOrderData && isScriptLoaded && isScriptLoadSucceed && !window.modalTriggered) {
             window.modalTriggered = true
@@ -78,10 +79,13 @@ class AffirmModal extends Component<AffirmProps> {
                 "unit_price": item.unit_price * 100,
                 "qty": item.qty 
             }))
+            
+            let hostNameSuffix = siteHostSuffix != null && siteHostSuffix != "" ? siteHostSuffix : ""
+
             window.affirm.checkout({
                 "merchant": {
                     "name": companyName != null && companyName != "" ? companyName : undefined,
-                    "user_confirmation_url": "https://" + window.location.hostname + "/affirm-confirm?g=" + qs.g ,
+                    "user_confirmation_url": "https://" + window.location.hostname + hostNameSuffix + "/affirm-confirm?g=" + qs.g ,
                     "user_cancel_url": this.state.returnUrl + "&status=denied",
                     "user_confirmation_url_action": "GET"
                 },
