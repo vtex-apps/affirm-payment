@@ -41,6 +41,12 @@
         "type": "string",
         "default": ""
       },
+      "siteHostSuffix":{
+        "title": "Site Host URL path suffix (optional)",
+        "description": "Extra path parameters appended to the site's host url. Example: '/abc/123/'",
+        "type": "string",
+        "default": ""
+      },
       "publicApiKey": {
         "title": "Public API Key",
         "description": "The public API key for your Affirm account",

@@ -9,7 +9,7 @@
   "license": "ISC",
   "dependencies": {
     "graphql": "^14.2.1",
-    "typescript": "3.5.2"
+    "typescript": "3.7.3"
   },
   "devDependencies": {
     "@vtex/api": "^3.24.1",

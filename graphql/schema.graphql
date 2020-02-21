@@ -3,6 +3,7 @@ type AffirmSettings {
     isLive: Boolean
     companyName: String
     publicApiKey: String
+    siteHostSuffix: String
 }
 
 type PaymentRequest {
