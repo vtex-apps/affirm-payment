@@ -1,7 +1,7 @@
 {
   "name": "affirm-payment",
   "vendor": "vtex",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "title": "Affirm Payment",
   "description": "An implentation of Affirm payment method",
   "categories": [],
@@ -41,7 +41,7 @@
         "type": "string",
         "default": ""
       },
-      "siteHostSuffix":{
+      "siteHostSuffix": {
         "title": "Site Host URL path suffix (optional)",
         "description": "Extra path parameters appended to the site's host url. Example: '/abc/123/'",
         "type": "string",
