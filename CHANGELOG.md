@@ -7,12 +7,31 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+- Support for Katapult feature (Affirm option that offers lease payments) (AKA Zibby)
+
+### Changed
+
+- Simplified and linted code
+
+### Removed
+
+- Moved Affirm promo components to separate app (`vtex.affirm-components`)
+- App setting for store root path is no longer used, root path is now taken from render-runtime
+
+## [0.2.0] - 2020-02-21
+
+### Added
+
+- App setting to handle store URLs with root paths like store.com/us/
+
 ## [0.1.1] - 2019-08-23
 
 ### Added
 
 - Now sending `orderId` to Affirm checkout instead of `transactionId`
-- Using new `status=denied` parameter on `returnUrl` for cases where shopper cancels modal checkout 
+- Using new `status=denied` parameter on `returnUrl` for cases where shopper cancels modal checkout
 
 ## [0.1.0] - 2019-08-06
 

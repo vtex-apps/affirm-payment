@@ -1,9 +1,0 @@
-query OrderDataSimple($qs: String) {
-    orderData(qs: $qs) {
-        value
-        orderId
-        inboundRequestsUrl
-        callbackUrl
-        returnUrl
-    }
-}
