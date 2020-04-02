@@ -1,0 +1,7 @@
+{
+  "extensions": {
+    "checkout/transactions/affirm-payment": {
+      "component": "AffirmModal"
+    }
+  }
+}

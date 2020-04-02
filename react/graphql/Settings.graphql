@@ -1,8 +1,8 @@
 query Settings {
-    affirmSettings {
-        isLive
-        companyName
-        publicApiKey
-        siteHostSuffix
-    }
+  affirmSettings {
+    isLive
+    enableKatapult
+    companyName
+    publicApiKey
+  }
 }

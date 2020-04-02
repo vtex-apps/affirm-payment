@@ -1,7 +1,7 @@
 {
   "name": "affirm-payment",
   "vendor": "vtex",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "title": "Affirm Payment",
   "description": "An implentation of Affirm payment method",
   "categories": [],
@@ -10,8 +10,9 @@
   ],
   "builders": {
     "react": "3.x",
-    "store": "0.x",
     "node": "4.x",
+    "pages": "1.x",
+    "docs": "0.x",
     "graphql": "1.x"
   },
   "mustUpdateAt": "2018-09-05",
@@ -21,8 +22,6 @@
   "dependencies": {
     "vtex.store": "2.x",
     "vtex.styleguide": "9.x",
-    "vtex.product-teaser-interfaces": "1.x",
-    "vtex.product-context": "0.x",
     "vtex.affirm-api": "0.x"
   },
   "settingsSchema": {
@@ -35,15 +34,15 @@
         "type": "boolean",
         "default": false
       },
+      "enableKatapult": {
+        "title": "Enable Katapult",
+        "description": "Set to true if you wish to enable Katapult leasing option",
+        "type": "boolean",
+        "default": false
+      },
       "companyName": {
         "title": "Company Name (optional)",
         "description": "If you have multiple sites operating under a single Affirm account, you can override the external company/brand name that the customer sees. This affects all references to your company name in the Affirm UI. Leave blank to use your default company name stored in your Affirm account.",
-        "type": "string",
-        "default": ""
-      },
-      "siteHostSuffix":{
-        "title": "Site Host URL path suffix (optional)",
-        "description": "Extra path parameters appended to the site's host url. Example: '/abc/123/'",
         "type": "string",
         "default": ""
       },
