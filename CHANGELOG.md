@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2.0.1] - 2020-04-03
+
 ### Fixed
 
 - Payment authorization apps must use react@2.x and pages@0.x builders
