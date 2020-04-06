@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Fixed
+
+- Added `tid` and `message` fields to gateway callback so that user gets a better error message if they close the modal before completing Affirm checkout.
+
 ## [2.0.2] - 2020-04-06
 
 ### Fixed

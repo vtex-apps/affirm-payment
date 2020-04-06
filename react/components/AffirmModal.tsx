@@ -67,10 +67,13 @@ class AffirmModal extends Component<AffirmAuthenticationProps> {
 
   public async respondTransaction(status: boolean) {
     if (!status) {
-      await fetch(`${this.props.orderData.callbackUrl}?status=denied`, {
-        method: 'post',
-        mode: 'no-cors',
-      })
+      await fetch(
+        `${this.props.orderData.callbackUrl}?tid=${this.props.orderData.transactionId}&message=Modal failed or was closed by user&status=denied`,
+        {
+          method: 'post',
+          mode: 'no-cors',
+        }
+      )
     }
     $(window).trigger('transactionValidation.vtex', [status])
   }
