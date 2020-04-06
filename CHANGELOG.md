@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2.0.2] - 2020-04-06
+
 ### Fixed
 
 - Changed to class component to meet requirements of react@2.x builder
