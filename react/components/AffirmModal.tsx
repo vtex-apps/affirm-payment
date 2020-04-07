@@ -119,7 +119,7 @@ class AffirmModal extends Component<AffirmAuthenticationProps> {
         leasable: true,
         display_name: item.name,
         sku: item.id,
-        unit_price: item.price * 100,
+        unit_price: Math.round(item.price * 100),
         qty: item.quantity,
       }))
       window.affirm.checkout({
@@ -169,9 +169,9 @@ class AffirmModal extends Component<AffirmAuthenticationProps> {
           mode: 'modal',
         },
         order_id: orderData.orderId,
-        shipping_amount: miniCart.shippingValue * 100,
-        tax_amount: miniCart.taxValue * 100,
-        total: orderData.value * 100,
+        shipping_amount: Math.round(miniCart.shippingValue * 100),
+        tax_amount: Math.round(miniCart.taxValue * 100),
+        total: Math.round(orderData.value * 100),
       })
       vtex.checkout.MessageUtils.hidePaymentMessage()
       var self = this
@@ -192,7 +192,7 @@ class AffirmModal extends Component<AffirmAuthenticationProps> {
               orderId: orderData.orderId,
               token: a.checkout_token,
               callbackUrl: orderData.callbackUrl,
-              orderTotal: orderData.value * 100,
+              orderTotal: Math.round(orderData.value * 100),
             },
           })
           if (response.data && response.data.orderUpdate) {
