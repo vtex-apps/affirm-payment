@@ -35,7 +35,6 @@
     "tslint-config-vtex": "^2.1.0",
     "typescript": "3.8.3",
     "vtex.affirm-api": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.affirm-api@0.2.1/public/_types/react",
-    "vtex.render-runtime": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.render-runtime@8.98.0/public/@types/vtex.render-runtime",
     "vtex.store": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store@2.93.1/public/@types/vtex.store",
     "vtex.styleguide": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.112.27/public/@types/vtex.styleguide"
   }
