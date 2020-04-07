@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2.0.4] - 2020-04-07
+
 ### Fixed
 
 - Added rounding when converting dollar values to cents, as float multiplication operations in JS can sometimes result in repeating decimals.
