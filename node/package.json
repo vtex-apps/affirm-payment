@@ -17,6 +17,10 @@
     "eslint-config-vtex": "10.1.0",
     "eslint-config-vtex-react": "4.1.0",
     "tslint": "^5.9.1",
-    "tslint-config-vtex": "^2.0.0"
+    "tslint-config-vtex": "^2.0.0",
+    "vtex.affirm-api": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.affirm-api@0.3.9/public/_types/react",
+    "vtex.product-context": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.product-context@0.7.1/public/@types/vtex.product-context",
+    "vtex.store": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store@2.95.1/public/@types/vtex.store",
+    "vtex.styleguide": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.113.1/public/@types/vtex.styleguide"
   }
 }
