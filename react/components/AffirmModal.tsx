@@ -122,6 +122,19 @@ class AffirmModal extends Component<AffirmAuthenticationProps> {
         unit_price: Math.round(item.price * 100),
         qty: item.quantity,
       }))
+      let discountTotal = 0
+      orderData.miniCart.items.forEach((item: any) => {
+        discountTotal += item.discount * -1
+      })
+      const discountsObject =
+        discountTotal > 0
+          ? {
+              DISCOUNT: {
+                discount_amount: Math.round(discountTotal * 100),
+                discount_display_name: 'Discount',
+              },
+            }
+          : {}
       window.affirm.checkout({
         merchant: {
           exchange_lease_enabled: enableKatapult,
@@ -169,6 +182,7 @@ class AffirmModal extends Component<AffirmAuthenticationProps> {
           mode: 'modal',
         },
         order_id: orderData.orderId,
+        discounts: discountsObject,
         shipping_amount: Math.round(miniCart.shippingValue * 100),
         tax_amount: Math.round(miniCart.taxValue * 100),
         total: Math.round(orderData.value * 100),
