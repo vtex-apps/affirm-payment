@@ -32,6 +32,7 @@ query OrderData($qs: String) {
         name
         price
         quantity
+        discount
       }
       shippingValue
       taxValue
