@@ -14,7 +14,6 @@ interface AffirmAuthenticationProps {
 }
 
 interface AffirmSettings {
-  isLive: boolean
   enableKatapult: boolean
   companyName: string
 }
@@ -43,16 +42,9 @@ class AffirmModal extends Component<AffirmAuthenticationProps> {
   }
 
   public async inject() {
-    const {
-      settings: { isLive },
-    } = this.props
+    const { sandboxMode } = JSON.parse(this.props.appPayload)
 
-    if (isLive == null) {
-      console.error('No Affirm settings found')
-      await this.respondTransaction(false)
-    }
-
-    const affirmUrl = isLive
+    const affirmUrl = !sandboxMode
       ? `https://cdn1.affirm.com/js/v2/affirm`
       : `https://cdn1-sandbox.affirm.com/js/v2/affirm`
 
