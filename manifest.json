@@ -29,8 +29,8 @@
     "type": "object",
     "properties": {
       "isLive": {
-        "title": "Production Mode",
-        "description": "Set to true for production mode, false for sandbox mode",
+        "title": "Production Mode (Store Components only)",
+        "description": "Set to true for production mode, false for sandbox mode. Does NOT affect Affirm checkout - use payment gateway setting to change checkout mode.",
         "type": "boolean",
         "default": false
       },

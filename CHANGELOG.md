@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed
+
+- Use `sandboxMode` variable from payment request payload to determine what Affirm script to load, instead of `isLive` app setting.
+
 ## [2.0.5] - 2020-04-17
 
 ### Added
