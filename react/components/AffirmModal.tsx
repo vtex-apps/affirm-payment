@@ -190,7 +190,7 @@ class AffirmModal extends Component<AffirmAuthenticationProps> {
         // eslint-disable-next-line prettier/prettier
         onSuccess: async function (a: any) {
           vtex.checkout.MessageUtils.showPaymentMessage()
-          const response = await orderUpdateMutation({
+          orderUpdateMutation({
             variables: {
               url: orderData.inboundRequestsUrl
                 .replace('https', 'http')
@@ -201,11 +201,16 @@ class AffirmModal extends Component<AffirmAuthenticationProps> {
               orderTotal: Math.round(orderData.value * 100),
             },
           })
-          if (response.data && response.data.orderUpdate) {
-            await self.respondTransaction(true)
-          } else {
-            await self.respondTransaction(false)
-          }
+            .then((response) => {
+              if (response.data?.orderUpdate) {
+                self.respondTransaction(true)
+              } else {
+                self.respondTransaction(false)
+              }
+            })
+            .catch(() => {
+              $(window).trigger('transactionValidation.vtex', [false])
+            })
         },
       })
 
