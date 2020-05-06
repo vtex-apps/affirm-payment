@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Fixed
+
+- add catch statement for inbound request mutation in case of timeouts or other errors
+
 ## [2.1.0] - 2020-04-22
 
 ### Changed
