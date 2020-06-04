@@ -79,7 +79,19 @@
         "description": "Number of minutes/hours/days before Affirm payments are automatically canceled",
         "type": "number",
         "default": 30
-      }
+      },
+      "katapultPublicToken": {
+        "title": "Katapult public token",
+        "description": "The public API token for your Katapult account",
+        "type": "string",
+        "default": ""
+      },
+      "katapultPrivateToken": {
+        "title": "Katapult private token",
+        "description": "The private API token for your Katapult account",
+        "type": "string",
+        "default": ""
+      }	      }
     }
   },
   "policies": [
