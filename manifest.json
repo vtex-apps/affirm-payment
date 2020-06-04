@@ -91,7 +91,7 @@
         "description": "The private API token for your Katapult account",
         "type": "string",
         "default": ""
-      }	      }
+      }
     }
   },
   "policies": [
