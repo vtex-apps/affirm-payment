@@ -20,3 +20,5 @@ The available settings are:
 - `Delay to auto-settle`: Number of minutes/hours/days before authorized Affirm payments are automatically settled.
 - `Delay to auto-settle after anti-fraud`: Number of minutes/hours/days before authorized Affirm payments are automatically settled after merchant's antifraud approval.
 - `Delay to cancel`: Number of minutes/hours/days before Affirm payments are automatically canceled.
+- `Katapult public token`: The public API token for your Katapult account.
+- `Katapult private token`: The private API token for your Katapult account.
