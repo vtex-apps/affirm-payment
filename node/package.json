@@ -13,18 +13,8 @@
   },
   "devDependencies": {
     "@vtex/api": "^3.24.1",
-    "eslint": "5.15.1",
-    "eslint-config-vtex": "10.1.0",
-    "eslint-config-vtex-react": "4.1.0",
-    "tslint": "^5.9.1",
-    "tslint-config-vtex": "^2.0.0",
     "vtex.affirm-api": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.affirm-api@0.2.1/public/_types/react",
-    "vtex.affirm-payment": "https://katapult--motorolaus.myvtex.com/_v/private/typings/linked/v1/vtex.affirm-payment@0.1.1+build1585751816/public/@types/vtex.affirm-payment",
-    "vtex.checkout-graphql": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.checkout-graphql@0.29.1/public/@types/vtex.checkout-graphql",
-    "vtex.product-context": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.product-context@0.7.1/public/@types/vtex.product-context",
-    "vtex.product-summary-context": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.product-summary-context@0.3.0/public/@types/vtex.product-summary-context",
-    "vtex.product-teaser-interfaces": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.product-teaser-interfaces@1.0.2/public/_types/react",
-    "vtex.store": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store@2.93.1/public/@types/vtex.store",
-    "vtex.styleguide": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.112.27/public/@types/vtex.styleguide"
+    "vtex.store": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store@2.96.1/public/@types/vtex.store",
+    "vtex.styleguide": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.121.0/public/@types/vtex.styleguide"
   }
 }
