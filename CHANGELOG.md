@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2.1.3] - 2020-06-19
+
 ### Changed
 
 - While Affirm modal is open, warn shopper if they attempt to close browser tab
