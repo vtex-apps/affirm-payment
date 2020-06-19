@@ -2,9 +2,10 @@
 import React, { Component } from 'react'
 import Helmet from 'react-helmet'
 import { graphql, MutationOptions, FetchResult } from 'react-apollo'
+
 import withSettings from './withSettings'
 import withOrderData from './withOrderData'
-import OrderUpdate from './../graphql/OrderUpdate.graphql'
+import OrderUpdate from '../graphql/OrderUpdate.graphql'
 
 interface AffirmAuthenticationProps {
   appPayload: string
@@ -35,7 +36,6 @@ class AffirmModal extends Component<AffirmAuthenticationProps> {
     scriptLoaded: false,
   }
 
-  // eslint-disable-next-line react/no-deprecated
   public componentWillMount = () => {
     this.inject()
     window.modalTriggered = false
@@ -102,123 +102,128 @@ class AffirmModal extends Component<AffirmAuthenticationProps> {
     const { scriptLoaded } = this.state
 
     const { publicKey } = JSON.parse(this.props.appPayload)
-    if (scriptLoaded && !window.modalTriggered) {
-      window.modalTriggered = true
-      window._affirm_config = {
-        public_api_key: publicKey,
-      }
-      const affirmItems = orderData.miniCart.items.map((item: any) => ({
-        leasable: true,
-        display_name: item.name,
-        sku: item.id,
-        unit_price: Math.round(item.price * 100),
-        qty: item.quantity,
-      }))
-      let discountTotal = 0
-      orderData.miniCart.items.forEach((item: any) => {
-        discountTotal += item.discount * -1
-      })
-      const discountsObject =
-        discountTotal > 0
-          ? {
-              DISCOUNT: {
-                discount_amount: Math.round(discountTotal * 100),
-                discount_display_name: 'Discount',
-              },
-            }
-          : {}
-      window.affirm.checkout({
-        merchant: {
-          exchange_lease_enabled: enableKatapult,
-          name:
-            companyName != null && companyName != '' ? companyName : undefined,
-          user_confirmation_url: '',
-          user_cancel_url: '',
-          user_confirmation_url_action: 'GET',
-        },
-        shipping: {
-          name: {
-            first: miniCart.buyer.firstName,
-            last: miniCart.buyer.lastName,
-          },
-          address: {
-            line1: miniCart.shippingAddress.street,
-            line2: miniCart.shippingAddress.complement,
-            city: miniCart.shippingAddress.city,
-            state: miniCart.shippingAddress.state,
-            zipcode: miniCart.shippingAddress.postalCode,
-            country: miniCart.shippingAddress.country,
-          },
-          phone_number: miniCart.buyer.phone,
-          email: miniCart.buyer.email,
-        },
-        billing: {
-          name: {
-            first: miniCart.buyer.firstName,
-            last: miniCart.buyer.lastName,
-          },
-          address: {
-            line1: miniCart.billingAddress.street,
-            line2: miniCart.billingAddress.complement,
-            city: miniCart.billingAddress.city,
-            state: miniCart.billingAddress.state,
-            zipcode: miniCart.billingAddress.postalCode,
-            country: miniCart.billingAddress.country,
-          },
-          phone_number: miniCart.buyer.phone,
-          email: miniCart.buyer.email,
-        },
-        items: affirmItems,
-        metadata: {
-          shipping_type: '',
-          mode: 'modal',
-        },
-        order_id: orderData.orderId,
-        discounts: discountsObject,
-        shipping_amount: Math.round(miniCart.shippingValue * 100),
-        tax_amount: Math.round(miniCart.taxValue * 100),
-        total: Math.round(orderData.value * 100),
-      })
-      vtex.checkout.MessageUtils.hidePaymentMessage()
-      var self = this
-      window.affirm.checkout.open({
-        // eslint-disable-next-line prettier/prettier
-        onFail: async function () {
-          vtex.checkout.MessageUtils.showPaymentMessage()
-          await self.respondTransaction(false)
-        },
-        // eslint-disable-next-line prettier/prettier
-        onSuccess: async function (a: any) {
-          vtex.checkout.MessageUtils.showPaymentMessage()
-          orderUpdateMutation({
-            variables: {
-              url: orderData.inboundRequestsUrl
-                .replace('https', 'http')
-                .replace(':action', 'auth'),
-              orderId: orderData.orderId,
-              token: a.checkout_token,
-              callbackUrl: orderData.callbackUrl,
-              orderTotal: Math.round(orderData.value * 100),
-            },
-          })
-            .then((response) => {
-              if (response.data?.orderUpdate) {
-                self.respondTransaction(true)
-              } else {
-                self.respondTransaction(false)
-              }
-            })
-            .catch(() => {
-              $(window).trigger('transactionValidation.vtex', [false])
-            })
-        },
-      })
-
-      window.affirm.ui.error.on('close', async function () {
-        vtex.checkout.MessageUtils.showPaymentMessage()
-        await self.respondTransaction(false)
-      })
+    if (!scriptLoaded || window.modalTriggered) return
+    window.modalTriggered = true
+    $(window).on('beforeunload', () => {
+      return ''
+    })
+    window._affirm_config = {
+      public_api_key: publicKey,
     }
+    const affirmItems = orderData.miniCart.items.map((item: any) => ({
+      leasable: true,
+      display_name: item.name,
+      sku: item.id,
+      unit_price: Math.round(item.price * 100),
+      qty: item.quantity,
+    }))
+    let discountTotal = 0
+    orderData.miniCart.items.forEach((item: any) => {
+      discountTotal += item.discount * -1
+    })
+    const discountsObject =
+      discountTotal > 0
+        ? {
+            DISCOUNT: {
+              discount_amount: Math.round(discountTotal * 100),
+              discount_display_name: 'Discount',
+            },
+          }
+        : {}
+    window.affirm.checkout({
+      merchant: {
+        exchange_lease_enabled: enableKatapult,
+        name: companyName || undefined,
+        user_confirmation_url: '',
+        user_cancel_url: '',
+        user_confirmation_url_action: 'GET',
+      },
+      shipping: {
+        name: {
+          first: miniCart.buyer.firstName,
+          last: miniCart.buyer.lastName,
+        },
+        address: {
+          line1: miniCart.shippingAddress.street,
+          line2: miniCart.shippingAddress.complement,
+          city: miniCart.shippingAddress.city,
+          state: miniCart.shippingAddress.state,
+          zipcode: miniCart.shippingAddress.postalCode,
+          country: miniCart.shippingAddress.country,
+        },
+        phone_number: miniCart.buyer.phone,
+        email: miniCart.buyer.email,
+      },
+      billing: {
+        name: {
+          first: miniCart.buyer.firstName,
+          last: miniCart.buyer.lastName,
+        },
+        address: {
+          line1: miniCart.billingAddress.street,
+          line2: miniCart.billingAddress.complement,
+          city: miniCart.billingAddress.city,
+          state: miniCart.billingAddress.state,
+          zipcode: miniCart.billingAddress.postalCode,
+          country: miniCart.billingAddress.country,
+        },
+        phone_number: miniCart.buyer.phone,
+        email: miniCart.buyer.email,
+      },
+      items: affirmItems,
+      metadata: {
+        shipping_type: '',
+        mode: 'modal',
+      },
+      order_id: orderData.orderId,
+      discounts: discountsObject,
+      shipping_amount: Math.round(miniCart.shippingValue * 100),
+      tax_amount: Math.round(miniCart.taxValue * 100),
+      total: Math.round(orderData.value * 100),
+    })
+    vtex.checkout.MessageUtils.hidePaymentMessage()
+    // eslint-disable-next-line @typescript-eslint/no-this-alias
+    const self = this
+    window.affirm.checkout.open({
+      // eslint-disable-next-line prettier/prettier
+      async onFail() {
+        vtex.checkout.MessageUtils.showPaymentMessage()
+        $(window).off('beforeunload')
+        await self.respondTransaction(false)
+      },
+      // eslint-disable-next-line prettier/prettier
+      async onSuccess(a: any) {
+        vtex.checkout.MessageUtils.showPaymentMessage()
+        orderUpdateMutation({
+          variables: {
+            url: orderData.inboundRequestsUrl
+              .replace('https', 'http')
+              .replace(':action', 'auth'),
+            orderId: orderData.orderId,
+            token: a.checkout_token,
+            callbackUrl: orderData.callbackUrl,
+            orderTotal: Math.round(orderData.value * 100),
+          },
+        })
+          .then(response => {
+            $(window).off('beforeunload')
+            if (response.data?.orderUpdate) {
+              self.respondTransaction(true)
+            } else {
+              self.respondTransaction(false)
+            }
+          })
+          .catch(() => {
+            $(window).trigger('transactionValidation.vtex', [false])
+          })
+      },
+    })
+
+    window.affirm.ui.error.on('close', async () => {
+      vtex.checkout.MessageUtils.showPaymentMessage()
+      $(window).off('beforeunload')
+      await self.respondTransaction(false)
+    })
   }
 
   public render() {

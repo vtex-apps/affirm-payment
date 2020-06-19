@@ -4,7 +4,7 @@
     "esModuleInterop": true,
     "jsx": "react",
     "lib": ["es2017", "dom", "es2018.promise"],
-    "module": "esnext",
+    "module": "es6",
     "moduleResolution": "node",
     "noImplicitAny": true,
     "noImplicitReturns": true,
