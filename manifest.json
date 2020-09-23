@@ -5,9 +5,7 @@
   "title": "Affirm Payment",
   "description": "An implentation of Affirm payment method",
   "categories": [],
-  "registries": [
-    "smartcheckout"
-  ],
+  "registries": ["smartcheckout"],
   "builders": {
     "react": "2.x",
     "node": "4.x",
@@ -22,7 +20,7 @@
   "dependencies": {
     "vtex.store": "2.x",
     "vtex.styleguide": "9.x",
-    "vtex.affirm-api": "0.x"
+    "vtex.affirm-api": "1.x"
   },
   "settingsSchema": {
     "title": "Affirm Integration",
@@ -55,11 +53,7 @@
       "delayInterval": {
         "title": "Interval to use for the following three settings",
         "type": "string",
-        "enum": [
-          "Minutes",
-          "Hours",
-          "Days"
-        ],
+        "enum": ["Minutes", "Hours", "Days"],
         "default": "Days"
       },
       "delayToAutoSettle": {
