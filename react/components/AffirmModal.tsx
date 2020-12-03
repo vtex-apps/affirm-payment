@@ -31,6 +31,8 @@ interface OrderData {
 declare const vtex: any
 declare const $: any
 
+const version = process.env.VTEX_APP_VERSION
+
 class AffirmModal extends Component<AffirmAuthenticationProps> {
   public state = {
     scriptLoaded: false,
@@ -174,6 +176,9 @@ class AffirmModal extends Component<AffirmAuthenticationProps> {
       metadata: {
         shipping_type: '',
         mode: 'modal',
+        platform_type: 'VTEX',
+        platform_version: version,
+        platform_affirm: 'Affirm_2.0',
       },
       order_id: orderData.orderId,
       discounts: discountsObject,
