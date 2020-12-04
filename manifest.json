@@ -5,9 +5,7 @@
   "title": "Affirm Payment",
   "description": "An implentation of Affirm payment method",
   "categories": [],
-  "registries": [
-    "smartcheckout"
-  ],
+  "registries": ["smartcheckout"],
   "builders": {
     "react": "2.x",
     "node": "4.x",
@@ -28,12 +26,6 @@
     "title": "Affirm Integration",
     "type": "object",
     "properties": {
-      "isLive": {
-        "title": "Production Mode (Store Components only)",
-        "description": "Set to true for production mode, false for sandbox mode. Does NOT affect Affirm checkout - use payment gateway setting to change checkout mode.",
-        "type": "boolean",
-        "default": false
-      },
       "enableKatapult": {
         "title": "Enable Katapult",
         "description": "Set to true if you wish to enable Katapult leasing option",
@@ -47,19 +39,21 @@
         "default": ""
       },
       "publicApiKey": {
-        "title": "Public API Key",
+        "title": "Public API Key for promotional components",
         "description": "The public API key for your Affirm account",
         "type": "string",
         "default": ""
       },
+      "isLive": {
+        "title": "Production Mode for promotional components",
+        "description": "Set to true for production mode, false for sandbox mode. Does NOT affect Affirm checkout - use payment gateway setting to change checkout mode.",
+        "type": "boolean",
+        "default": false
+      },
       "delayInterval": {
         "title": "Interval to use for the following three settings",
         "type": "string",
-        "enum": [
-          "Minutes",
-          "Hours",
-          "Days"
-        ],
+        "enum": ["Minutes", "Hours", "Days"],
         "default": "Days"
       },
       "delayToAutoSettle": {
@@ -81,13 +75,13 @@
         "default": 30
       },
       "katapultPublicToken": {
-        "title": "Katapult public token",
+        "title": "Katapult public token (optional)",
         "description": "The public API token for your Katapult account",
         "type": "string",
         "default": ""
       },
       "katapultPrivateToken": {
-        "title": "Katapult private token",
+        "title": "Katapult private token (optional)",
         "description": "The private API token for your Katapult account",
         "type": "string",
         "default": ""

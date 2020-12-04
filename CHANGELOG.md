@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed
+
+- Add platform metadata to Affirm checkout object
+- Reorder app settings and adjust descriptions for improved clarity
+- Update docs to reflect settings changes
+
 ## [2.1.4] - 2020-09-23
 
 ### Changed
