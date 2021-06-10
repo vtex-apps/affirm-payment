@@ -63,13 +63,13 @@
         "default": "Days"
       },
       "delayToAutoSettle": {
-        "title": "Delay to auto-settle",
+        "title": "Delay to automatic payment capture",
         "description": "Number of minutes/hours/days before authorized Affirm payments are automatically settled",
         "type": "number",
         "default": 30
       },
       "delayToAutoSettleAfterAntifraud": {
-        "title": "Delay to auto-settle after anti-fraud",
+        "title": "Delay to automatic payment capture after antifraud analysis",
         "description": "Number of minutes/hours/days before authorized Affirm payments are automatically settled after merchant's antifraud approval",
         "type": "number",
         "default": 30

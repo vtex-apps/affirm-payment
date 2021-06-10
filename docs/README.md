@@ -19,8 +19,8 @@ The available settings are:
 - `Public API Key for promotional components`: The public API key provided to you by Affirm.
 - `Production Mode for promotional components`: Determines if the components from the [Affirm Components](https://github.com/vtex-apps/affirm-components) app run in Production or Sandbox mode.
 - `Interval to use for the following three settings`: Determines the unit of time used by the following settings.
-- `Delay to auto-settle`: Number of minutes/hours/days before authorized Affirm payments are automatically settled.
-- `Delay to auto-settle after anti-fraud`: Number of minutes/hours/days before authorized Affirm payments are automatically settled after merchant's antifraud approval.
+- `Delay to automatic payment capture`: Number of minutes/hours/days before authorized Affirm payments are automatically settled.
+- `Delay to automatic payment capture after antifraud analysis`: Number of minutes/hours/days before authorized Affirm payments are automatically settled after merchant's antifraud approval.
 - `Delay to cancel`: Number of minutes/hours/days before Affirm payments are automatically canceled.
 - `Katapult public token`: The public API token for your Katapult account. This is only needed if Katapult is enabled.
 - `Katapult private token`: The private API token for your Katapult account. This is only needed if Katapult is enabled.
