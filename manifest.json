@@ -22,7 +22,8 @@
   "dependencies": {
     "vtex.store": "2.x",
     "vtex.styleguide": "9.x",
-    "vtex.affirm-api": "1.x"
+    "vtex.affirm-api": "1.x",
+    "vtex.affirm-components": "0.x"
   },
   "settingsSchema": {
     "title": "Affirm Integration",
