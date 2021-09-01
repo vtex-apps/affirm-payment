@@ -13,8 +13,7 @@
   },
   "devDependencies": {
     "@vtex/api": "^3.24.1",
-    "vtex.affirm-api": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.affirm-api@0.2.1/public/_types/react",
-    "vtex.store": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store@2.96.1/public/@types/vtex.store",
-    "vtex.styleguide": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.121.0/public/@types/vtex.styleguide"
+    "vtex.store": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store@2.120.1/public/@types/vtex.store",
+    "vtex.styleguide": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.145.0/public/@types/vtex.styleguide"
   }
 }
