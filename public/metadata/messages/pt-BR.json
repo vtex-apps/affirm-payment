@@ -1,0 +1,14 @@
+
+{
+  "name": "Affirm",
+  "headline": "Disponibilize aos seus clientes a opção de pagar a prazo com o Affirm.",
+  "overview": "O Affirm oferece uma maneira simples e transparente de pagar compras a prazo. Ao utilizar o Affirm, é possível exibir o preço a ser pago mensalmente para cada item, disponibilizando aos clientes um cronograma de acordo com o orçamento desejado. Conecte este aplicativo à sua loja VTEX e empodere seus clientes com uma forma alternativa de pagamento a prazo.",
+  "features": [
+   "Exibe opções de financiamento para os clientes na página do produto",
+   "Permite que os clientes paguem através do meio de pagamento Affirm"
+  ],
+  "websiteURL": "https://vtex.com/",
+  "support": {
+    "url": "https://help-tickets.vtex.com/en/support?app=vtex.affirm-payment"
+  }
+}

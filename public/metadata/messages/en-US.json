@@ -1,13 +1,12 @@
 
 {
   "name": "Affirm",
-  "headline": "Allow shoppers to pay over time with Affirm",
+  "headline": "Allow shoppers to pay over time with Affirm.",
   "overview": "Affirm is a simple and transparent way for customers to pay for purchases over time. By using Affirm, you can display a monthly payment price for each item — showing shoppers a budget friendly schedule of their choosing. Connect this app to your VTEX store and you'll be able to empower your customers with an alternative way to pay over time.",
   "features": [
     "Displays financing options for shoppers on the product page",
     "Allows shoppers to pay through the Affirm payment method"
   ],
-  "additionalInformation": "Please head over to the official docs to see advanced setup instructions.",
   "websiteURL": "https://vtex.com/",
   "support": {
     "url": "https://help-tickets.vtex.com/en/support?app=vtex.affirm-payment"
