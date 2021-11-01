@@ -4,6 +4,8 @@
 
 This is a payment authorization app for the Affirm payment method (financing with monthly payments).
 
+> ⚠️ _Currently Affirm cannot be used in a marketplace scenario where the seller processes the payment. In marketplace scenarios, the marketplace itself must process the payment._
+
 ## Configuration
 
 1. Enable Affirm as a payment method in your store admin. In the Gateway Affiliation, enter your Affirm public API key as the `Application Key` and your Affirm private API key as the `Application Token`. For initial testing, set the Test/Production toggle to `Test` and use sandbox keys.
