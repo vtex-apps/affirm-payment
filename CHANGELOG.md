@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed
+- Update documentation to explain to the developer that we do not support a seller, marketplace situation
+
 ## [2.1.5] - 2020-12-04
 
 ### Changed
