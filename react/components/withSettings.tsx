@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import { graphql } from 'react-apollo'
+
 import Settings from '../graphql/Settings.graphql'
 
 interface WithSettingsProps {
