@@ -22,13 +22,7 @@ export const mutations = {
       token,
       callbackUrl,
       orderTotal,
-    }: {
-      inboundUrl: string
-      orderId: string
-      token: string
-      callbackUrl: string
-      orderTotal: number
-    },
+    }: PaymentRequestPayload,
     ctx: Context
   ) => {
     const {
