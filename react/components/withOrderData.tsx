@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import { graphql } from 'react-apollo'
+
 import OrderData from '../graphql/OrderData.graphql'
 
 interface WithOrderDataProps {

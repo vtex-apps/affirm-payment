@@ -355,21 +355,17 @@ tslib@^1.9.3:
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.10.0.tgz#c3c19f95973fb0a62973fb09d90d961ee43e5c8a"
   integrity sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
 
-"vtex.affirm-api@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.affirm-api@0.2.1/public/_types/react":
-  version "0.0.0"
-  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.affirm-api@0.2.1/public/_types/react#fa7a0347e046eab3dd768998fc9252b2c0dd5aef"
+"vtex.render-runtime@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.render-runtime@7.45.0/public/@types/vtex.render-runtime":
+  version "7.45.0"
+  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.render-runtime@7.45.0/public/@types/vtex.render-runtime#d9c9c4bbe8efe698a6b6566cc22e9dd7687a2442"
 
-"vtex.render-runtime@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.render-runtime@7.41.1/public/@types/vtex.render-runtime":
-  version "7.41.1"
-  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.render-runtime@7.41.1/public/@types/vtex.render-runtime#3695d40d1d538b10f95616db096b258df7cb8c8a"
+"vtex.store@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store@2.122.0/public/@types/vtex.store":
+  version "2.122.0"
+  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store@2.122.0/public/@types/vtex.store#6bf27ad5449fe14926287432fc12bdaf27a86b03"
 
-"vtex.store@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store@2.96.1/public/@types/vtex.store":
-  version "2.96.1"
-  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store@2.96.1/public/@types/vtex.store#2085868375f2631d6b32e81464a0076df529516f"
-
-"vtex.styleguide@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.121.0/public/@types/vtex.styleguide":
-  version "9.121.0"
-  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.121.0/public/@types/vtex.styleguide#acd5bb61dbbe2d5afff4ebd585015619300e6c92"
+"vtex.styleguide@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.145.2/public/@types/vtex.styleguide":
+  version "9.145.2"
+  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.145.2/public/@types/vtex.styleguide#ca64bf8408ad3eb487b0822dd68f77565c986a56"
 
 zen-observable-ts@^0.8.19:
   version "0.8.19"

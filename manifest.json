@@ -5,12 +5,10 @@
   "title": "Affirm Payment",
   "description": "An implentation of Affirm payment method",
   "categories": [],
-  "registries": [
-    "smartcheckout"
-  ],
+  "registries": ["smartcheckout"],
   "builders": {
     "react": "2.x",
-    "node": "4.x",
+    "node": "6.x",
     "pages": "0.x",
     "docs": "0.x",
     "graphql": "1.x"
@@ -55,11 +53,7 @@
       "delayInterval": {
         "title": "Interval to use for the following three settings",
         "type": "string",
-        "enum": [
-          "Minutes",
-          "Hours",
-          "Days"
-        ],
+        "enum": ["Minutes", "Hours", "Days"],
         "default": "Days"
       },
       "delayToAutoSettle": {
@@ -78,7 +72,7 @@
         "title": "Delay to cancel",
         "description": "Number of minutes/hours/days before Affirm payments are automatically canceled",
         "type": "number",
-        "default": 30
+        "default": 60
       },
       "katapultPublicToken": {
         "title": "Katapult public token (optional)",

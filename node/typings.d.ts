@@ -1,27 +1,13 @@
-
-declare module 'colossus' {
-    import {Context as KoaContext} from 'koa'
-  
-    export interface IOContext {
-      account: string
-      workspace: string
-      authToken: string
-      params: {
-        [param: string]: string
-      }
-      userAgent: string
-      region: string
-      route: string
-      production: boolean
-    }
-  
-    export interface ColossusContext extends KoaContext {
-      vtex: IOContext
-    }
-  }
-
 interface AffirmSettings {
-    isLive: boolean
-    companyName: string
-    publicApiKey: string
+  isLive: boolean
+  companyName: string
+  publicApiKey: string
+}
+
+interface PaymentRequestPayload {
+  inboundUrl: string
+  orderId: string
+  token: string
+  callbackUrl: string
+  orderTotal: number
 }
