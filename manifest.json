@@ -1,7 +1,7 @@
 {
   "name": "affirm-payment",
   "vendor": "vtex",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "title": "Affirm Payment",
   "description": "An implentation of Affirm payment method",
   "categories": [],
