@@ -12,7 +12,7 @@
     "typescript": "3.9.7"
   },
   "devDependencies": {
-    "@vtex/api": "6.45.6",
+    "@vtex/api": "6.45.10",
     "vtex.store": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store@2.122.0/public/@types/vtex.store",
     "vtex.styleguide": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.145.2/public/@types/vtex.styleguide"
   }
