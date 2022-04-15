@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Fixed
+
+- Raised app timeout from 10 to 20 seconds
+
 ## [2.2.0] - 2022-03-22
 
 ### Added
