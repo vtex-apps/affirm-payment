@@ -1,0 +1,29 @@
+name: '[PSH] Quality Engineering'
+
+on:
+  push:
+    branches:
+      - master
+      - main
+      - bugfix/*
+      - chore/*
+      - enhancement/*
+      - feature/*
+      - fix/*
+      - hotfix/*
+      - translation/*
+      - actions/*
+
+jobs:
+  quality-engineering:
+    name: QE
+    uses: vtex-apps/usqa/.github/workflows/quality-engineering.yml@main
+    with:
+      nodeSonar: true
+      nodeSonarProjectKey: vtex-apps_affirm-payment
+      nodeSonarOrganization: vtex-apps
+      nodeLint: true
+      nodeTest: true
+    secrets:
+      githubToken: ${{ secrets.GITHUB_TOKEN }}
+      sonarToken: ${{ secrets.SONAR_TOKEN }}
