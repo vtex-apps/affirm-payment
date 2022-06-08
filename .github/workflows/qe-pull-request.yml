@@ -19,7 +19,7 @@ jobs:
       danger: true
       dangerRequireChangelog: false
       nodeLint: true
-      nodeTest: true
+      nodeTest: false
       nodeSonar: true
       nodeSonarProjectKey: vtex-apps_affirm-payment
       nodeSonarOrganization: vtex-apps
