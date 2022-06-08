@@ -19,11 +19,11 @@ jobs:
     name: QE
     uses: vtex-apps/usqa/.github/workflows/quality-engineering.yml@main
     with:
+      nodeLint: true
+      nodeTest: false
       nodeSonar: true
       nodeSonarProjectKey: vtex-apps_affirm-payment
       nodeSonarOrganization: vtex-apps
-      nodeLint: true
-      nodeTest: true
     secrets:
       githubToken: ${{ secrets.GITHUB_TOKEN }}
       sonarToken: ${{ secrets.SONAR_TOKEN }}
