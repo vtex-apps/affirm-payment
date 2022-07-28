@@ -4,7 +4,7 @@ mutation OrderUpdate(
   $token: String
   $callbackUrl: String
   $orderTotal: Int
-) {
+) @context(provider: "vtex.affirm-payment") {
   orderUpdate(
     inboundUrl: $url
     orderId: $orderId
