@@ -1,4 +1,4 @@
-query OrderData($qs: String) {
+query OrderData ($qs: String @context(provider: "vtex.affirm-payment") @cacheControl (scope: PRIVATE)) {
   orderData(qs: $qs) {
     transactionId
     orderId

@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+- Added security to app services
+
 ## [2.2.1] - 2022-04-15
 
 ### Fixed
