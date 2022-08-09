@@ -117,5 +117,5 @@ type Mutation {
     token: String
     callbackUrl: String
     orderTotal: Int
-  ): PaymentResponse
+  ): PaymentResponse @cacheControl (scope: PRIVATE)
 }
