@@ -1,0 +1,76 @@
+---
+base:
+  secrets:
+    enabled: true
+    name: VTEX_QE
+  vtex:
+    account: productusqa
+    id: 2001459804
+    domain: myvtex.com
+    vtexIdUrl: https://vtexid.vtex.com.br/api/vtexid/pub/authenticate/default
+    deployCli:
+      enabled: true
+      git: https://github.com/vtex/toolbelt.git
+      branch: qe/cypress
+  twilio:
+    enabled: true
+  jira:
+    enabled: false
+    account: vtex-dev
+    board: AFFIRMPAYMENT
+    issueType: Bug
+    priority: High
+    testing: true
+  slack:
+    enabled: false
+    channel: some-channel
+  cypress:
+    devMode: false
+    runHeaded: false
+    projectId: 72oi9b
+    getCookies: true
+    maxJobs: 3
+    quiet: true
+    video: false
+    videoCompression: false
+    videoUploadOnPasses: false
+    screenshotOnRunFailure: true
+    trashAssetsBeforeRuns: false
+    viewportWidth: 1440
+    viewportHeight: 1500
+    defaultCommandTimeout: 25000
+    requestTimeout: 25000
+    watchForFileChanges: false
+    pageLoadTimeout: 45000
+    browser: chrome
+    chromeWebSecurity: false
+    sorry: false
+  stateFiles: []
+
+workspace:
+  name: random
+  prefix: affirmpayment
+  linkApp:
+    enabled: true
+    logOutput:
+      enabled: false
+  installApps:
+    - vtex.affirm-payment
+  removeApps: []
+  wipe:
+    enabled: false
+    stopOnFail: false
+    specs:
+      - cypress-shared/integration/fedex-shipping/wipe.spec.js
+  teardown:
+    enabled: true
+
+strategy:
+  graphql_api_testcases:
+    enabled: true
+    sendDashboard: true
+    hardTries: 1
+    stopOnFail: true
+    parallel: true
+    specs:
+      - cypress/integration/2.1-graphql.spec.js
