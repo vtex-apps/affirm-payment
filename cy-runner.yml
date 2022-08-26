@@ -7,17 +7,21 @@ base:
     account: productusqa
     id: 2001459804
     domain: myvtex.com
+    urlExternalSeller: https://productusqaseller.myvtex.com
     vtexIdUrl: https://vtexid.vtex.com.br/api/vtexid/pub/authenticate/default
+    orderFormConfig: https://productusqa.vtexcommercestable.com.br/api/checkout/pvt/configuration/orderForm
     deployCli:
+      # Implies login with credentials from base.secrets.name
+      # If you want to use the current vtex login, disable it
       enabled: true
       git: https://github.com/vtex/toolbelt.git
       branch: qe/cypress
   twilio:
     enabled: true
   jira:
-    enabled: false
+    enabled: true
     account: vtex-dev
-    board: AFFIRMPAYMENT
+    board: B2BORG
     issueType: Bug
     priority: High
     testing: true
@@ -27,17 +31,17 @@ base:
   cypress:
     devMode: false
     runHeaded: false
-    projectId: 72oi9b
     getCookies: true
     maxJobs: 3
     quiet: true
+    projectId: wk64au
     video: false
     videoCompression: false
     videoUploadOnPasses: false
     screenshotOnRunFailure: true
     trashAssetsBeforeRuns: false
     viewportWidth: 1440
-    viewportHeight: 1500
+    viewportHeight: 900
     defaultCommandTimeout: 25000
     requestTimeout: 25000
     watchForFileChanges: false
@@ -45,32 +49,38 @@ base:
     browser: chrome
     chromeWebSecurity: false
     sorry: false
-  stateFiles: []
+  stateFiles:
+    - .orders.json
 
 workspace:
-  name: random
-  prefix: affirmpayment
+  # If random a new name will be generated with prefix (ie b2b1234567)
+  name: syedaffirm
+  prefix: affirmactions
+  # If enabled it'll link the app for integration tests with PR code
   linkApp:
-    enabled: true
+    enabled: false
     logOutput:
       enabled: false
-  installApps:
-    - vtex.affirm-payment
-  removeApps: []
+  # List of apps will be installed, if not empty and config.vtexCli disabled,
+  # you must ensure your vtex cli is authenticated already
+  installApps: []
+  removeApps:
+    - vtex.bitcot-qa-theme
   wipe:
     enabled: false
     stopOnFail: false
     specs:
-      - cypress-shared/integration/fedex-shipping/wipe.spec.js
+      - cypress-shared/integration/b2b/wipe.spec.js
   teardown:
-    enabled: true
+    enabled: false
 
 strategy:
-  graphql_api_testcases:
+  # The strategies must be in order, with dependent tests last
+  organizationA:
     enabled: true
     sendDashboard: true
     hardTries: 1
-    stopOnFail: true
-    parallel: true
+    stopOnFail: false
+    parallel: false
     specs:
-      - cypress/integration/2.1-graphql.spec.js
+      - cypress-shared/integration/affirm/2.3-singleProduct.spec.js
