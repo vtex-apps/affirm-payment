@@ -32,7 +32,7 @@ base:
     devMode: false
     runHeaded: false
     getCookies: true
-    maxJobs: 3
+    maxJobs: 2
     quiet: true
     projectId: wk64au
     video: false
@@ -54,33 +54,94 @@ base:
 
 workspace:
   # If random a new name will be generated with prefix (ie b2b1234567)
-  name: syedaffirm
-  prefix: affirmactions
+  name: random
+  prefix: affirmpayment
   # If enabled it'll link the app for integration tests with PR code
   linkApp:
-    enabled: false
+    enabled: true
     logOutput:
       enabled: false
   # List of apps will be installed, if not empty and config.vtexCli disabled,
   # you must ensure your vtex cli is authenticated already
-  installApps: []
+  installApps: 
+   - vtex.affirm-payment
+   - vtex.affirm-api
+   - vtex.affirm-qa-theme
   removeApps:
     - vtex.bitcot-qa-theme
   wipe:
-    enabled: false
+    enabled: true
     stopOnFail: false
     specs:
-      - cypress-shared/integration/b2b/wipe.spec.js
+      - cypress-shared/integration/affirm/wipe.spec.js
   teardown:
     enabled: false
 
 strategy:
   # The strategies must be in order, with dependent tests last
-  organizationA:
+  postSetup:
+    enabled: true
+    sendDashboard: true
+    hardTries: 1
+    stopOnFail: true
+    parallel: false
+    specs:
+      - cypress-shared/integration/affirm/post_setup.spec.js
+  graphql:
+    enabled: true
+    sendDashboard: true
+    hardTries: 1
+    stopOnFail: true
+    parallel: false
+    specs:
+      - cypress-shared/integration/affirm/2.1-graphql.spec.js
+    dependency:
+      - cypress-shared/integration/affirm/post_setup.spec.js
+  orderProductForRefund:
+    enabled: true
+    sendDashboard: true
+    hardTries: 1
+    stopOnFail: false
+    parallel: true
+    specs:
+      - cypress-shared/integration/affirm/2.2-singleProduct.spec.js
+      - cypress-shared/integration/affirm/2.3-multiProduct.spec.js
+    dependency:
+      - cypress-shared/integration/affirm/2.1-graphql.spec.js
+  externalSellerAndDiscountTestcase: 
+    enabled: true
+    sendDashboard: true
+    hardTries: 1
+    stopOnFail: false
+    parallel: true
+    specs:
+      - cypress-shared/integration/affirm/2.4-discountProduct.spec.js
+      - cypress-shared/integration/affirm/2.5-validate-invalid-phonenumber-in-checkout-page.spec.js
+      - cypress-shared/integration/affirm/2.6-external-seller.spec.js
+    dependency:
+      - cypress-shared/integration/affirm/2.2-singleProduct.spec.js
+  transactions:
     enabled: true
     sendDashboard: true
     hardTries: 1
     stopOnFail: false
     parallel: false
     specs:
-      - cypress-shared/integration/affirm/2.3-singleProduct.spec.js
+      - cypress-shared/integration/affirm/2.7-transactions.spec.js
+    dependency:
+      - cypress-shared/integration/affirm/2.2-singleProduct.spec.js
+      - cypress-shared/integration/affirm/2.3-multiProduct.spec.js
+      - cypress-shared/integration/affirm/2.4-discountProduct.spec.js
+      - cypress-shared/integration/affirm/2.5-validate-invalid-phonenumber-in-checkout-page.spec.js
+      - cypress-shared/integration/affirm/2.6-external-seller.spec.js
+  refundTestcase:
+    enabled: true
+    sendDashboard: true
+    hardTries: 1
+    stopOnFail: false
+    parallel: true
+    specs:
+      - cypress-shared/integration/affirm/2.8-fullRefund.spec.js
+      - cypress-shared/integration/affirm/2.9-partialRefund.spec.js
+    dependency:
+      - cypress-shared/integration/affirm/2.7-transactions.spec.js
