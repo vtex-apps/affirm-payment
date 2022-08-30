@@ -21,7 +21,7 @@ base:
   jira:
     enabled: true
     account: vtex-dev
-    board: B2BORG
+    board: AFFIRM
     issueType: Bug
     priority: High
     testing: true
@@ -108,7 +108,7 @@ strategy:
       - cypress-shared/integration/affirm/2.3-multiProduct.spec.js
     dependency:
       - cypress-shared/integration/affirm/2.1-graphql.spec.js
-  externalSellerAndDiscountTestcase: 
+  DiscountTestcase: 
     enabled: true
     sendDashboard: true
     hardTries: 1
@@ -117,7 +117,11 @@ strategy:
     specs:
       - cypress-shared/integration/affirm/2.4-discountProduct.spec.js
       - cypress-shared/integration/affirm/2.5-validate-invalid-phonenumber-in-checkout-page.spec.js
-      - cypress-shared/integration/affirm/2.6-external-seller.spec.js
+      # ExternalSeller shows popup randomly inside and outside the window
+      # So, for now we disabled this test 
+      # Once it is fixed then will enable again
+      # https://www.loom.com/share/efe711c4883243058989a712a62dadb9
+      # - cypress-shared/integration/affirm/2.6-external-seller.spec.js
     dependency:
       - cypress-shared/integration/affirm/2.2-singleProduct.spec.js
   transactions:
@@ -133,7 +137,7 @@ strategy:
       - cypress-shared/integration/affirm/2.3-multiProduct.spec.js
       - cypress-shared/integration/affirm/2.4-discountProduct.spec.js
       - cypress-shared/integration/affirm/2.5-validate-invalid-phonenumber-in-checkout-page.spec.js
-      - cypress-shared/integration/affirm/2.6-external-seller.spec.js
+      # - cypress-shared/integration/affirm/2.6-external-seller.spec.js
   refundTestcase:
     enabled: true
     sendDashboard: true
