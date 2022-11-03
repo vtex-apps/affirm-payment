@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 ### Changed
+- Fix security issues reported by Dependabot alerts (critical, high, and low)
+
+### Changed
 - Reusable workflow migrated to version 2
 
 ## [2.2.3] - 2022-08-09

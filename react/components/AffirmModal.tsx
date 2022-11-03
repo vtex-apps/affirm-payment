@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/camelcase */
 import React, { Component } from 'react'
 import Helmet from 'react-helmet'
 import { graphql, MutationOptions, FetchResult } from 'react-apollo'
