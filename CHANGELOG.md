@@ -7,22 +7,30 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Fixed
+
+- In subaccount scenario, query order data from main account
+
 ## [2.2.4] - 2022-11-04
 
 ### Changed
+
 - Fix security issues reported by Dependabot alerts (critical, high, and low)
 
 ### Changed
+
 - Reusable workflow migrated to version 2
 
 ## [2.2.3] - 2022-08-09
 
 ### Fixed
+
 - Adjust placement of query context
 
 ## [2.2.2] - 2022-08-02
 
 ### Added
+
 - Added security to app services
 
 ## [2.2.1] - 2022-04-15

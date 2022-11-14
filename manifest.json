@@ -5,9 +5,7 @@
   "title": "Affirm Payment",
   "description": "An implentation of Affirm payment method",
   "categories": [],
-  "registries": [
-    "smartcheckout"
-  ],
+  "registries": ["smartcheckout"],
   "builders": {
     "react": "2.x",
     "node": "6.x",
@@ -55,11 +53,7 @@
       "delayInterval": {
         "title": "Interval to use for the following three settings",
         "type": "string",
-        "enum": [
-          "Minutes",
-          "Hours",
-          "Days"
-        ],
+        "enum": ["Minutes", "Hours", "Days"],
         "default": "Days"
       },
       "delayToAutoSettle": {
@@ -96,6 +90,9 @@
   },
   "policies": [
     {
+      "name": "Get_Account_By_Identifier"
+    },
+    {
       "name": "outbound-access",
       "attrs": {
         "host": "{{account}}.vtexcommercestable.com.br",
@@ -112,7 +109,7 @@
     {
       "name": "outbound-access",
       "attrs": {
-        "host": "{{workspace}}--{{account}}.{{process.env.VTEX_PUBLIC_ENDPOINT}}",
+        "host": "*",
         "path": "/affirm/*"
       }
     }
