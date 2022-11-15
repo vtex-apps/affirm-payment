@@ -1,11 +1,13 @@
 {
   "name": "affirm-payment",
   "vendor": "vtex",
-  "version": "2.2.4",
+  "version": "2.2.5",
   "title": "Affirm Payment",
   "description": "An implentation of Affirm payment method",
   "categories": [],
-  "registries": ["smartcheckout"],
+  "registries": [
+    "smartcheckout"
+  ],
   "builders": {
     "react": "2.x",
     "node": "6.x",
@@ -53,7 +55,11 @@
       "delayInterval": {
         "title": "Interval to use for the following three settings",
         "type": "string",
-        "enum": ["Minutes", "Hours", "Days"],
+        "enum": [
+          "Minutes",
+          "Hours",
+          "Days"
+        ],
         "default": "Days"
       },
       "delayToAutoSettle": {

@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2.2.5] - 2022-11-15
+
 ### Fixed
 
 - In subaccount scenario, query order data from main account
