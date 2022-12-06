@@ -22,6 +22,6 @@ The available settings are:
 - `Delay to automatic payment capture`: Number of minutes/hours/days before authorized Affirm payments are automatically settled.
 - `Delay to automatic payment capture after antifraud analysis`: Number of minutes/hours/days before authorized Affirm payments are automatically settled after merchant's antifraud approval.
 - `Delay to cancel`: Number of minutes/hours/days before Affirm payments are automatically canceled.
-  > ⚠️ _`Delay to cancel` also affects the amount of time the user is given to complete the Affirm checkout modal. As such, the app will enforce a minimum `delay to cancel` time of 60 minutes. Shorter times may be inputted on the settings page, but they will be ignored._
+  > ⚠️ _`Delay to cancel` also affects the amount of time the user is given to complete the Affirm checkout modal. As such, the app will enforce a minimum `delay to cancel` time of 60 minutes. Shorter times may be inputted on the settings page, but they will be ignored. Also, times longer than 1 day should not be used._
 - `Katapult public token`: The public API token for your Katapult account. This is only needed if Katapult is enabled.
 - `Katapult private token`: The private API token for your Katapult account. This is only needed if Katapult is enabled.
