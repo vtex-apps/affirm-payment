@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Fixed
+
+- Change default `DelayToCancel` app setting value from 60 days to 1 day
+
 ## [2.2.5] - 2022-11-15
 
 ### Fixed
