@@ -70,7 +70,7 @@ workspace:
     specs:
       - cypress-shared/integration/affirm/wipe.spec.js
   teardown:
-    enabled: false
+    enabled: true
 
 strategy:
   # The strategies must be in order, with dependent tests last
