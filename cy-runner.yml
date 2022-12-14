@@ -10,14 +10,6 @@ base:
     urlExternalSeller: https://productusqaseller.myvtex.com
     vtexIdUrl: https://vtexid.vtex.com.br/api/vtexid/pub/authenticate/default
     orderFormConfig: https://productusqa.vtexcommercestable.com.br/api/checkout/pvt/configuration/orderForm
-    deployCli:
-      # Implies login with credentials from base.secrets.name
-      # If you want to use the current vtex login, disable it
-      enabled: true
-      git: https://github.com/vtex/toolbelt.git
-      branch: qe/cypress
-  twilio:
-    enabled: true
   jira:
     enabled: true
     account: vtex-dev
@@ -48,7 +40,6 @@ base:
     pageLoadTimeout: 45000
     browser: chrome
     chromeWebSecurity: false
-    sorry: false
   stateFiles:
     - .orders.json
 
@@ -56,6 +47,10 @@ workspace:
   # If random a new name will be generated with prefix (ie b2b1234567)
   name: random
   prefix: affirmpayment
+  reserveAccount:
+    enabled: true
+    setup:
+      - vtex.orders-broadcast@0.x
   # If enabled it'll link the app for integration tests with PR code
   linkApp:
     enabled: true
@@ -75,7 +70,7 @@ workspace:
     specs:
       - cypress-shared/integration/affirm/wipe.spec.js
   teardown:
-    enabled: false
+    enabled: true
 
 strategy:
   # The strategies must be in order, with dependent tests last
