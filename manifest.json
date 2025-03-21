@@ -1,9 +1,9 @@
 {
   "name": "affirm-payment",
-  "vendor": "vtex",
-  "version": "2.2.6",
+  "vendor": "logixalpartnerus",
+  "version": "0.0.1",
   "title": "Affirm Payment",
-  "description": "An implentation of Affirm payment method",
+  "description": "An implentation of Affirm payment method By Logixal",
   "categories": [],
   "registries": [
     "smartcheckout"
@@ -22,7 +22,7 @@
   "dependencies": {
     "vtex.store": "2.x",
     "vtex.styleguide": "9.x",
-    "vtex.affirm-api": "1.x"
+    "logixalpartnerus.affirm-api": "1.x"
   },
   "settingsSchema": {
     "title": "Affirm Integration",
@@ -90,6 +90,25 @@
         "title": "Katapult private token (optional)",
         "description": "The private API token for your Katapult account",
         "type": "string",
+        "default": ""
+      },
+      "enablePartialCancellation": {
+        "title": "Partial cancellation",
+        "description": "Enable partial cancellation",
+        "type": "boolean",
+        "default": false
+      },
+      "vtexAppKey": {
+        "title": "VTEX app key",
+        "description": "The app key for your VTEX account",
+        "type": "string",
+        "default": ""
+      },
+      "vtexAppToken": {
+        "title": "VTEX app token",
+        "description": "The app token for your VTEX account",
+        "type": "string",
+        "format": "password",
         "default": ""
       }
     }
