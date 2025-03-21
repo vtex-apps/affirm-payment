@@ -1,9 +1,9 @@
 {
   "name": "affirm-payment",
-  "vendor": "vtex",
-  "version": "2.2.6",
+  "vendor": "logixalpartnerus",
+  "version": "0.0.1",
   "title": "Affirm Payment",
-  "description": "An implentation of Affirm payment method",
+  "description": "An implentation of Affirm payment method By Logixal",
   "categories": [],
   "registries": [
     "smartcheckout"
@@ -22,7 +22,7 @@
   "dependencies": {
     "vtex.store": "2.x",
     "vtex.styleguide": "9.x",
-    "vtex.affirm-api": "1.x"
+    "logixalpartnerus.affirm-api": "1.x"
   },
   "settingsSchema": {
     "title": "Affirm Integration",
