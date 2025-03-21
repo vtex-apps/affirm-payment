@@ -1,7 +1,7 @@
 {
   "name": "affirm-payment",
   "vendor": "logixalpartnerus",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "title": "Affirm Payment",
   "description": "An implentation of Affirm payment method By Logixal",
   "categories": [],
