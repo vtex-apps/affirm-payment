@@ -1,5 +1,5 @@
 query OrderData ($qs: String) {
-  orderData(qs: $qs) @context(provider: "logixalpartnerus.affirm-payment") {
+  orderData(qs: $qs) @context(provider: "vtex.affirm-payment") {
     transactionId
     orderId
     miniCart {
