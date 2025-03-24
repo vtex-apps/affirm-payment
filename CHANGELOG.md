@@ -7,15 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-## [2.2.7] - 2025-03-21
-
-- Addedfeature flag enablePartialCancellation, vtex key & token to be configure in Vtex Settings of Affirm Payment App
-
-## [0.0.2] - 2025-03-21
-
 ### Changed
 
 - Update cy-runner.yml
+- Addedfeature flag enablePartialCancellation, vtex key & token to be configure in Vtex Settings of Affirm Payment App
 
 ## [2.2.6] - 2022-12-06
 
