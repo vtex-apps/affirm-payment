@@ -22,7 +22,7 @@
   "dependencies": {
     "vtex.store": "2.x",
     "vtex.styleguide": "9.x",
-    "logixalpartnerus.affirm-api": "1.x"
+    "vtex.affirm-api": "1.x"
   },
   "settingsSchema": {
     "title": "Affirm Integration",

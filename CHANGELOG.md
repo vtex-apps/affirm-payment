@@ -7,7 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-## [0.0.3] - 2025-03-21
+## [2.2.7] - 2025-03-21
+
+- Addedfeature flag enablePartialCancellation, vtex key & token to be configure in Vtex Settings of Affirm Payment App
 
 ## [0.0.2] - 2025-03-21
 
