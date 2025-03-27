@@ -25,6 +25,4 @@ The available settings are:
   > ⚠️ _`Delay to cancel` also affects the amount of time the user is given to complete the Affirm checkout modal. As such, the app will enforce a minimum `delay to cancel` time of 60 minutes. Shorter times may be inputted on the settings page, but they will be ignored. Also, times longer than 1 day should not be used._
 - `Katapult public token`: The public API token for your Katapult account. This is only needed if Katapult is enabled.
 - `Katapult private token`: The private API token for your Katapult account. This is only needed if Katapult is enabled.
-- `Partial cancellation`: Feature flag to enable partial cancellation feature which voids the amount of partially cancelled items on transaction.
-- `VTEX app Key`: The API key used for authenticating requests to the VTEX platform API.
-- `VTEX app Token`: The API token used for authenticating requests to the VTEX platform API.
+- `Partial cancellation`: Feature flag to enable partial cancellation feature, which when enabled, ensures that the amount for partially canceled items on order is voided during settlement.
