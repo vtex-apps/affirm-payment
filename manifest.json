@@ -97,19 +97,6 @@
         "description": "Enable partial cancellation",
         "type": "boolean",
         "default": false
-      },
-      "vtexAppKey": {
-        "title": "VTEX app key",
-        "description": "The app key for your VTEX account",
-        "type": "string",
-        "default": ""
-      },
-      "vtexAppToken": {
-        "title": "VTEX app token",
-        "description": "The app token for your VTEX account",
-        "type": "string",
-        "format": "password",
-        "default": ""
       }
     }
   },
