@@ -91,6 +91,12 @@
         "description": "The private API token for your Katapult account",
         "type": "string",
         "default": ""
+      },
+      "enablePartialCancellation": {
+        "title": "Partial cancellation",
+        "description": "Enable partial cancellation",
+        "type": "boolean",
+        "default": false
       }
     }
   },
