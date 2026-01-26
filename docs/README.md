@@ -2,6 +2,8 @@
 
 # Affirm Payment
 
+[<i class="fa-brands fa-github"></i> Source code](https://github.com/vtex-apps/affirm-payment)
+
 > ⚠️ This app is no longer maintained by VTEX. This means support and maintenance are no longer provided.
 
 This is a payment authorization app for the Affirm payment method (financing with monthly payments). By installing this app, the [Affirm payment connector app](https://github.com/vtex-apps/affirm-api) will also be automatically installed as a dependency.
@@ -28,4 +30,5 @@ The available settings are:
 - `Katapult public token`: The public API token for your Katapult account. This is only needed if Katapult is enabled.
 - `Katapult private token`: The private API token for your Katapult account. This is only needed if Katapult is enabled.
 - `Partial cancellation`: Feature flag to enable partial cancellation feature, which when enabled, ensures that the amount for partially canceled items on order is voided during settlement.
+
 
